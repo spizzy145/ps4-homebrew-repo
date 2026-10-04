@@ -1,240 +1,298 @@
 const grid = document.getElementById("grid");
 const search = document.getElementById("search");
+const categories = document.getElementById("categories");
+const appCount = document.getElementById("appCount");
+const errorBox = document.getElementById("error");
+const themeButton = document.getElementById("theme");
 
 let apps = [];
+let activeCategory = "All";
 
 
+// Load repository
 
-fetch("repo.json")
+async function loadRepo() {
 
-.then(response => response.json())
+    try {
 
-.then(data => {
+        const response = await fetch("repo.json");
 
-apps = data.apps;
+        if (!response.ok) {
+            throw new Error("repo.json failed");
+        }
 
-renderApps(apps);
 
-});
+        const data = await response.json();
 
+        if (!data.apps || data.apps.length === 0) {
 
+            throw new Error("No apps found");
 
+        }
 
 
-function renderApps(list){
+        apps = data.apps;
 
+        appCount.textContent = apps.length;
 
-grid.innerHTML="";
+        createCategories();
 
+        renderApps();
 
 
-list.forEach(app=>{
+    } catch(error) {
 
+        errorBox.innerHTML =
+        `
+        <div class="card">
+        <h2>Failed to load repository</h2>
+        <p>${error.message}</p>
+        </div>
+        `;
 
-let card=document.createElement("article");
+    }
 
-card.className="card";
+}
 
 
 
-card.innerHTML=`
+// Create category buttons
 
-<div class="icon">
+function createCategories(){
 
-<img loading="lazy"
-src="${app.icon}"
-onerror="this.src='icons/default.png'">
+    let cats = [
+        "All",
+        ...new Set(
+            apps.map(app => app.category)
+        )
+    ];
 
-</div>
 
+    categories.innerHTML = "";
 
 
-<div class="content">
+    cats.forEach(category => {
 
 
-<div class="top">
+        let button = document.createElement("div");
 
+        button.className = "category";
 
-<h2>${app.name}</h2>
+        button.textContent = category;
 
-<span class="badge">
-${app.category}
-</span>
 
+        button.onclick = () => {
 
-</div>
+            activeCategory = category;
 
+            renderApps();
 
+        };
 
-<p class="description">
 
-${app.description}
+        categories.appendChild(button);
 
-</p>
 
-
-
-<div class="details">
-
-
-<div>
-<b>Version</b>
-<span>${app.version}</span>
-</div>
-
-
-<div>
-<b>Developer</b>
-<span>${app.developer}</span>
-</div>
-
-
-<div>
-<b>FW Support</b>
-<span>${app.firmware}</span>
-</div>
-
-
-<div>
-<b>Title ID</b>
-<span>${app.title_id}</span>
-</div>
-
-
-<div>
-<b>Content ID</b>
-<span>${app.content_id}</span>
-</div>
-
-
-<div>
-<b>Size</b>
-<span>${app.size}</span>
-</div>
-
-
-<div>
-<b>Updated</b>
-<span>${app.updated}</span>
-</div>
-
-
-</div>
-
-
-
-<a class="download"
-href="${app.pkg}">
-
-Download PKG
-
-</a>
-
-
-
-</div>
-
-`;
-
-
-grid.appendChild(card);
-
-
-});
+    });
 
 
 }
 
 
 
+// Render apps
+
+function renderApps(){
 
 
-search.addEventListener("input",()=>{
+    grid.innerHTML="";
 
 
-let value =
-search.value.toLowerCase();
+    let filtered = apps.filter(app => {
+
+
+        let text = `
+
+        ${app.name}
+        ${app.developer}
+        ${app.title_id}
+        ${app.content_id}
+        ${app.category}
+
+        `.toLowerCase();
 
 
 
-let result =
-apps.filter(app =>
+        let matchesSearch =
+        text.includes(
+            search.value.toLowerCase()
+        );
 
-app.name.toLowerCase()
-.includes(value)
 
-||
-app.category.toLowerCase()
-.includes(value)
+        let matchesCategory =
+        activeCategory === "All" ||
+        app.category === activeCategory;
 
+
+
+        return matchesSearch && matchesCategory;
+
+
+    });
+
+
+
+    if(filtered.length === 0){
+
+        grid.innerHTML =
+        `
+        <div class="card">
+        <h2>No apps found</h2>
+        </div>
+        `;
+
+        return;
+
+    }
+
+
+
+
+    filtered.forEach(app => {
+
+
+        let card = document.createElement("article");
+
+
+        card.className="card";
+
+
+        card.innerHTML =
+
+        `
+
+        <img 
+        class="icon"
+        src="${app.icon}"
+        onerror="this.src='icons/default.png'"
+        >
+
+
+        <h2>${app.name}</h2>
+
+
+        <div class="category-text">
+        ${app.category}
+        · v${app.version}
+        </div>
+
+
+
+        <p class="description">
+        ${app.description}
+        </p>
+
+
+
+        <div class="meta">
+
+        <b>Developer:</b>
+        ${app.developer}
+
+        <br>
+
+
+        <b>Firmware:</b>
+        ${app.firmware}
+
+        <br>
+
+
+        <b>Title ID:</b>
+        ${app.title_id}
+
+        <br>
+
+
+        <b>Content ID:</b>
+        ${app.content_id}
+
+        <br>
+
+
+        <b>Size:</b>
+        ${app.size}
+
+        <br>
+
+
+        <b>Updated:</b>
+        ${app.updated}
+
+        </div>
+
+
+
+        <a 
+        class="download"
+        href="${app.pkg}"
+        target="_blank"
+        >
+
+        Download PKG
+
+        </a>
+
+
+        `;
+
+
+        grid.appendChild(card);
+
+
+
+    });
+
+
+}
+
+
+
+// Search
+
+search.addEventListener(
+"input",
+renderApps
 );
 
 
 
-renderApps(result);
+// Dark / Light mode
+
+themeButton.onclick = () => {
 
 
-});
+    document.body.classList.toggle("light");
 
 
+    if(
+    document.body.classList.contains("light")
+    ){
 
+        themeButton.textContent="☾ Dark";
 
+    }
+    else{
 
+        themeButton.textContent="☀ Light";
 
-
-// DARK MODE DEFAULT
-
-
-const theme =
-document.getElementById("theme");
-
-
-
-if(localStorage.getItem("theme") !== "light"){
-
-document.body.classList.add("dark");
-
-theme.textContent="☀";
-
-}
-
-
-
-
-theme.onclick=()=>{
-
-
-document.body.classList.toggle("dark");
-
-
-
-if(document.body.classList.contains("dark")){
-
-
-localStorage.setItem(
-"theme",
-"dark"
-);
-
-
-theme.textContent="☀";
-
-
-}
-
-else{
-
-
-localStorage.setItem(
-"theme",
-"light"
-);
-
-
-theme.textContent="☾";
-
-
-}
+    }
 
 
 };
+
+
+
+// Start
+
+loadRepo();

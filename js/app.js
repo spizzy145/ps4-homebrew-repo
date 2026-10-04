@@ -1,114 +1,136 @@
 const grid = document.getElementById("grid");
 const search = document.getElementById("search");
 
-
 let apps = [];
 
 
+
 fetch("repo.json")
-.then(res => res.json())
+
+.then(response => response.json())
+
 .then(data => {
 
 apps = data.apps;
 
-displayApps(apps);
+render(apps);
 
 });
 
 
 
-function displayApps(list){
+
+
+function render(list){
+
 
 grid.innerHTML="";
+
 
 
 list.forEach(app=>{
 
 
-let card=document.createElement("div");
+const card=document.createElement("div");
 
 card.className="card";
 
 
+
 card.innerHTML=`
 
-<div class="icon-box">
+<div class="icon">
 
-<img src="${app.icon}" 
+<img src="${app.icon}"
 onerror="this.src='icons/default.png'">
 
 </div>
 
 
-<div class="info">
+
+<div class="content">
+
+
+<div class="title">
 
 <h2>${app.name}</h2>
 
+<span>${app.category}</span>
 
-<span class="category">
-${app.category}
-</span>
-
-
-<span class="version">
-v${app.version}
-</span>
+</div>
 
 
-<p>
+
+<p class="description">
+
 ${app.description}
+
 </p>
 
 
-<div class="details">
 
-<div>
+<div class="info">
+
+
+<p>
+<b>Version</b>
+${app.version}
+</p>
+
+
+<p>
 <b>Developer</b>
 ${app.developer}
-</div>
+</p>
 
 
-<div>
+<p>
 <b>Firmware</b>
 ${app.firmware}
-</div>
+</p>
 
 
-<div>
+<p>
 <b>Title ID</b>
 ${app.title_id}
-</div>
+</p>
 
 
-<div>
+<p>
 <b>Content ID</b>
 ${app.content_id}
-</div>
+</p>
 
 
-<div>
+<p>
 <b>Size</b>
 ${app.size}
-</div>
+</p>
 
 
-<div>
+<p>
 <b>Updated</b>
 ${app.updated}
-</div>
+</p>
 
 
 </div>
 
 
-<a class="download" href="${app.pkg}">
+
+<a class="download"
+href="${app.pkg}">
+
 Download PKG
+
 </a>
+
 
 
 </div>
 
 `;
+
 
 
 grid.appendChild(card);
@@ -121,20 +143,75 @@ grid.appendChild(card);
 
 
 
+
 search.oninput=()=>{
 
 
-let value=search.value.toLowerCase();
+let text=search.value.toLowerCase();
 
 
-let filtered=apps.filter(app=>
 
-app.name.toLowerCase().includes(value)
+render(
+
+apps.filter(app=>
+
+app.name.toLowerCase()
+.includes(text)
+
+)
 
 );
 
 
-displayApps(filtered);
+};
+
+
+
+
+
+// Dark mode
+
+
+const button=document.getElementById("theme");
+
+
+
+if(localStorage.getItem("theme")=="dark"){
+
+document.body.classList.add("dark");
+
+button.textContent="☀";
+
+}
+
+
+
+button.onclick=()=>{
+
+
+document.body.classList.toggle("dark");
+
+
+
+if(document.body.classList.contains("dark")){
+
+
+localStorage.setItem("theme","dark");
+
+button.textContent="☀";
+
+
+}
+
+else{
+
+
+localStorage.setItem("theme","light");
+
+button.textContent="☾";
+
+
+}
 
 
 };

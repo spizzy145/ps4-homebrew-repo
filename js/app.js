@@ -2,105 +2,71 @@ const grid = document.getElementById("grid");
 
 
 fetch("repo.json")
-
 .then(response => response.json())
-
 .then(data => {
 
+    data.apps.forEach(app => {
 
-data.apps.forEach(app => {
+        const card = document.createElement("div");
 
-
-let card=document.createElement("div");
-
-card.className="card";
+        card.className = "card";
 
 
-card.innerHTML = `
+        card.innerHTML = `
+
+            <img src="${app.icon}" 
+            onerror="this.src='icons/default.png'">
 
 
-<img src="${app.icon}" 
-onerror="this.src='icons/default.png'">
+            <h2>${app.name}</h2>
 
 
-<h2>${app.name}</h2>
+            <div class="category">
+                ${app.category}
+            </div>
 
 
-<div class="category">
-${app.category}
-</div>
+            <div class="version">
+                Version ${app.version}
+            </div>
 
 
-<div class="version">
-Version ${app.version}
-</div>
+            <p class="description">
+                ${app.description}
+            </p>
 
 
+            <div class="info">
 
-<p class="description">
+                <b>Title ID:</b> ${app.title_id}
+                <br>
 
-${app.description}
+                <b>Content ID:</b> ${app.content_id}
+                <br>
 
-</p>
+                <b>Size:</b> ${app.size}
 
-
-
-<div class="info">
-
-<b>Title ID:</b> ${app.title_id}
-
-<br>
-
-<b>Content ID:</b> ${app.content_id}
-
-<br>
-
-<b>Size:</b> ${app.size}
-
-</div>
+            </div>
 
 
+            <a class="download" 
+            href="${app.pkg}" 
+            target="_blank">
 
-<a class="download" 
-href="${app.pkg}" 
-target="_blank">
+                Download PKG
 
-Download PKG
+            </a>
 
-</a>
-
-
-`;
+        `;
 
 
-grid.appendChild(card);
+        grid.appendChild(card);
 
+    });
+
+})
+.catch(error => {
+
+    console.error("Failed loading repo:", error);
 
 });
-
-
-});
-
-
-
-document.getElementById("search").oninput=function(){
-
-
-let value=this.value.toLowerCase();
-
-
-document.querySelectorAll(".card")
-.forEach(card=>{
-
-
-card.style.display =
-card.innerText.toLowerCase()
-.includes(value)
-?"block"
-:"none";
-
-
-});
-
-
-};

@@ -5,13 +5,13 @@
       "category": "Utility",
       "version": "1.02",
       "developer": "Azif",
-      "firmware": "13.52",
+      "firmware": "Up to 13.52",
       "updated": "2026-10-04",
       "title_id": "AZIF00001",
       "content_id": "AZIF00001",
       "size": "6.31 MB",
-      "description": "PS4 homebrew utility application.",
-      "icon": "icons/default.png",
+      "description": "A PS4 homebrew utility application.",
+      "icon": "icons/ps4vibe.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_AZIF00001_v1.02.pkg"
     },
 
@@ -40,8 +40,8 @@
       "title_id": "KRGR00001",
       "content_id": "KRGR00001",
       "size": "225 MB",
-      "description": "PS4 homebrew application.",
-      "icon": "icons/default.png",
+      "description": "A PS4 native homebrew port.",
+      "icon": "icons/hamer.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_KRGR00001_v1.00.pkg"
     },
 
@@ -55,8 +55,8 @@
       "title_id": "LAPY20015",
       "content_id": "LAPY20015",
       "size": "52.3 MB",
-      "description": "Homebrew utility collection.",
-      "icon": "icons/default.png",
+      "description": "A PS4 utility for managing avatars.",
+      "icon": "icons/avatar-changer.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_LAPY20015_v1.02.pkg"
     },
 
@@ -70,8 +70,8 @@
       "title_id": "MAND00001",
       "content_id": "MAND00001",
       "size": "6.81 MB",
-      "description": "PS4 homebrew utility.",
-      "icon": "icons/default.png",
+      "description": "Interactive Mandelbrot fractal viewer for PS4.",
+      "icon": "icons/mandelbrot.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_MAND00001_v1.00.pkg"
     },
 
@@ -85,8 +85,8 @@
       "title_id": "NTXS10053",
       "content_id": "NTXS10053",
       "size": "12.6 MB",
-      "description": "PS4 homebrew tool.",
-      "icon": "icons/default.png",
+      "description": "A PS4 homebrew tool.",
+      "icon": "icons/scratch-everywhere.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_NTXS10053_v0.37.pkg"
     },
 
@@ -100,8 +100,8 @@
       "title_id": "PKGI13337",
       "content_id": "PKGI13337",
       "size": "81.5 MB",
-      "description": "PS4 homebrew package manager.",
-      "icon": "icons/default.png",
+      "description": "A PS4 homebrew package manager.",
+      "icon": "icons/fpkgi.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_PKGI13337_v1.10.0.pkg"
     },
 
@@ -115,14 +115,14 @@
       "title_id": "SFIN00000",
       "content_id": "SFIN00000",
       "size": "55.8 MB",
-      "description": "PS4 homebrew application.",
-      "icon": "icons/default.png",
+      "description": "A PS4 homebrew application.",
+      "icon": "icons/switchfin.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_SFIN00000_v0.9.4.pkg"
     },
 
     {
       "name": "2048 Game (PS4 Native)",
-      "category": "Utility",
+      "category": "Game",
       "version": "1.01",
       "developer": "Skid",
       "firmware": "Up to 13.52",
@@ -130,8 +130,8 @@
       "title_id": "SKID02048",
       "content_id": "SKID02048",
       "size": "36.5 MB",
-      "description": "PS4 homebrew tool.",
-      "icon": "icons/default.png",
+      "description": "Native PS4 version of the 2048 game.",
+      "icon": "icons/2048.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_SKID02048_v1.01.pkg"
     },
 
@@ -146,7 +146,7 @@
       "content_id": "UDAT99998",
       "size": "8.38 MB",
       "description": "PS4 save related utility.",
-      "icon": "icons/default.png",
+      "icon": "icons/nobd-toolkit.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_UDAT99998_v2.04.pkg"
     },
 
@@ -160,8 +160,8 @@
       "title_id": "WILI00000",
       "content_id": "WILI00000",
       "size": "71.3 MB",
-      "description": "PS4 homebrew application.",
-      "icon": "icons/default.png",
+      "description": "A PS4 homebrew application.",
+      "icon": "icons/wili.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_WILI00000_v1.6.0.pkg"
     },
 
@@ -175,8 +175,8 @@
       "title_id": "YTSB42069",
       "content_id": "YTSB42069",
       "size": "6.31 MB",
-      "description": "PS4 homebrew media application.",
-      "icon": "icons/default.png",
+      "description": "A PS4 homebrew media application.",
+      "icon": "icons/ytsb.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_YTSB42069_v1.0.1.pkg"
     }
   ]

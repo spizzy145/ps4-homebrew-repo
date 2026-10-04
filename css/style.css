@@ -4,67 +4,62 @@
 
 body {
     margin:0;
-    background:#050505;
-    color:white;
+    background:#080808;
+    color:#eee;
     font-family:Arial, Helvetica, sans-serif;
 }
 
 
 header {
-    height:80px;
-    padding:0 40px;
+
+    height:70px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
-    background:#0b0b0b;
+
+    padding:0 35px;
+
+    background:#0d0d0d;
+
     border-bottom:1px solid #222;
+
 }
 
 
 .logo {
-    font-size:30px;
-    font-weight:800;
-    letter-spacing:1px;
-}
 
+    font-size:26px;
 
-#search {
-
-    width:300px;
-    padding:12px 18px;
-
-    background:#161616;
-    border:1px solid #333;
-
-    border-radius:30px;
+    font-weight:bold;
 
     color:white;
 
 }
 
 
-.category-bar {
+#search {
 
-    padding:20px 40px;
+    width:260px;
 
-    display:flex;
+    padding:12px 18px;
 
-    gap:12px;
+    border-radius:8px;
+
+    border:1px solid #333;
+
+    background:#151515;
+
+    color:white;
 
 }
 
 
-.category-bar button {
+main {
 
-    background:#171717;
-
-    color:#ddd;
-
-    border:1px solid #333;
-
-    padding:10px 20px;
-
-    border-radius:20px;
+    padding:35px;
 
 }
 
@@ -72,12 +67,9 @@ header {
 
 #grid {
 
-    padding:20px 40px;
-
     display:grid;
 
-    grid-template-columns:
-    repeat(auto-fill,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
 
     gap:25px;
 
@@ -87,24 +79,25 @@ header {
 
 .card {
 
-    background:#101010;
+    background:#111;
 
     border:1px solid #242424;
 
-    border-radius:15px;
+    border-radius:12px;
 
-    padding:20px;
+    padding:18px;
 
     transition:.2s;
 
 }
 
 
+
 .card:hover {
 
-    transform:translateY(-6px);
+    border-color:#777;
 
-    border-color:#2f80ff;
+    transform:translateY(-4px);
 
 }
 
@@ -118,9 +111,9 @@ header {
 
     object-fit:contain;
 
-    background:#181818;
+    background:#050505;
 
-    border-radius:12px;
+    border-radius:10px;
 
 }
 
@@ -128,7 +121,9 @@ header {
 
 .card h2 {
 
-    margin:18px 0 5px;
+    margin:15px 0 5px;
+
+    font-size:22px;
 
 }
 
@@ -136,7 +131,7 @@ header {
 
 .category {
 
-    color:#888;
+    color:#999;
 
     font-size:14px;
 
@@ -146,9 +141,9 @@ header {
 
 .version {
 
-    color:#2f80ff;
+    margin-top:8px;
 
-    font-size:14px;
+    color:#aaa;
 
 }
 
@@ -156,9 +151,9 @@ header {
 
 .description {
 
-    color:#aaa;
+    color:#ccc;
 
-    height:45px;
+    min-height:45px;
 
 }
 
@@ -170,11 +165,11 @@ header {
 
     padding-top:15px;
 
-    border-top:1px solid #222;
-
-    color:#777;
+    border-top:1px solid #292929;
 
     font-size:13px;
+
+    color:#999;
 
 }
 
@@ -182,29 +177,30 @@ header {
 
 .download {
 
-    display:block;
+    margin-top:18px;
 
-    margin-top:20px;
+    display:block;
 
     text-align:center;
 
     padding:12px;
 
-    background:#2f80ff;
+    background:#eee;
 
-    color:white;
+    color:#111;
 
     text-decoration:none;
 
-    border-radius:8px;
+    border-radius:6px;
 
     font-weight:bold;
 
 }
 
 
+
 .download:hover {
 
-    background:#559aff;
+    background:white;
 
 }

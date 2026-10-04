@@ -11,31 +11,13 @@ fetch("repo.json")
         <h3>${app.name}</h3>
         <p>${app.category}</p>
         <p>Version: ${app.version}</p>
-<<<<<<< HEAD
-        <a href="${app.pkg}">Download PKG</a>
-=======
-        <a href="${app.pkg}" target="_blank">Download PKG</a>
->>>>>>> e318e40 (Load apps from repo.json)
+        <a class="download-btn" href="${app.pkg}" target="_blank">
+          Download PKG
+        </a>
       `;
 
       grid.appendChild(card);
     });
-<<<<<<< HEAD
-  });
-
-const b = document.getElementById("theme");
-b.onclick = () => document.body.classList.toggle("light");
-
-const s = document.getElementById("search");
-s.oninput = () => {
-  document.querySelectorAll(".card").forEach(c => {
-    c.style.display =
-      c.innerText.toLowerCase().includes(s.value.toLowerCase())
-      ? "block"
-      : "none";
-  });
-};
-=======
   })
   .catch(error => {
     console.error("Failed to load repo:", error);
@@ -60,4 +42,3 @@ s.oninput = () => {
       : "none";
   });
 };
->>>>>>> e318e40 (Load apps from repo.json)

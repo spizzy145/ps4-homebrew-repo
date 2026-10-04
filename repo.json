@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "Azif",
+      "name": "PS4Vibe",
       "category": "Utility",
       "version": "1.02",
       "developer": "Azif",
@@ -31,7 +31,7 @@
     },
 
     {
-      "name": "KRGR",
+      "name": "Hamer!!(PORT)",
       "category": "Game",
       "version": "1.00",
       "developer": "KRGR",
@@ -46,7 +46,7 @@
     },
 
     {
-      "name": "Lapy Apps",
+      "name": "Avatar Changer",
       "category": "Utility",
       "version": "1.02",
       "developer": "Lapy",
@@ -61,7 +61,7 @@
     },
 
     {
-      "name": "Mando",
+      "name": "Mandelbrot zoom",
       "category": "Utility",
       "version": "1.00",
       "developer": "Mando",
@@ -76,8 +76,8 @@
     },
 
     {
-      "name": "NetCheat",
-      "category": "Utility",
+      "name": "scratch Everywhere!",
+      "category": "Homebrew",
       "version": "0.37",
       "developer": "NetCheat",
       "firmware": "Up to 13.52",
@@ -91,7 +91,7 @@
     },
 
     {
-      "name": "PKGi",
+      "name": "FPKGI",
       "category": "Store",
       "version": "1.10.0",
       "developer": "PKGi Team",
@@ -106,7 +106,7 @@
     },
 
     {
-      "name": "SFIN",
+      "name": "Switchfin",
       "category": "Utility",
       "version": "0.9.4",
       "developer": "SFIN",
@@ -121,7 +121,7 @@
     },
 
     {
-      "name": "Skid",
+      "name": "2048 Game (PS4 Native)",
       "category": "Utility",
       "version": "1.01",
       "developer": "Skid",
@@ -136,7 +136,7 @@
     },
 
     {
-      "name": "UDAT",
+      "name": "NoBD Toolkit",
       "category": "Save",
       "version": "2.04",
       "developer": "UDAT",

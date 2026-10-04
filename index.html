@@ -1,77 +1,81 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>OpenPS4 Hub</title>
 
-<link rel="icon" href="favicon.png">
-
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-
 <body>
-
 
 <header>
 
-<div class="logo">
-OpenPS4 Hub
-</div>
+<div class="header-inner">
 
+<h1>OpenPS4 Hub</h1>
 
-<nav>
-
-<a href="#">Home</a>
-<a href="#">Apps</a>
-<a href="#">About</a>
+<p>PS4 Homebrew Repository</p>
 
 <button id="theme">
-☀
+☀ Light
 </button>
 
-</nav>
+</div>
 
 </header>
 
 
-
-<section class="hero">
-
-<h1>
-PS4 Homebrew Repository
-</h1>
-
-<p>
-Browse and download PS4 homebrew applications.
-</p>
+<main>
 
 
-<input id="search"
-placeholder="Search apps...">
+<section class="toolbar">
+
+<input 
+id="search"
+placeholder="Search name, developer, title ID..."
+>
+
+
+<div id="categories"></div>
+
 
 </section>
 
 
 
+<section class="stats">
 
-<main>
+<div>
+<strong id="appCount">0</strong>
+<span>Apps</span>
+</div>
 
-<div id="grid"></div>
+
+<div>
+<strong>2026-10-04</strong>
+<span>Last Updated</span>
+</div>
+
+
+</section>
+
+
+
+<section id="grid"></section>
+
+
+<div id="error"></div>
+
 
 </main>
 
 
 
-
 <script src="js/app.js"></script>
 
-
 </body>
-
 </html>

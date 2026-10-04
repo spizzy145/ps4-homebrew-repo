@@ -1,1 +1,10 @@
-{"apps":[]}
+{
+  "apps": [
+    {
+      "name": "Itemzflow",
+      "category": "Manager",
+      "version": "1.08",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_ITEM00001_v1.08.pkg"
+    }
+  ]
+}

@@ -11,17 +11,15 @@ body{
 margin:0;
 
 font-family:
-
 Arial, Helvetica, sans-serif;
 
-background:#f2f3f5;
+background:#080b10;
 
-color:#111;
+color:white;
 
 transition:.3s;
 
 }
-
 
 
 
@@ -37,18 +35,17 @@ justify-content:space-between;
 
 padding:0 40px;
 
-background:white;
+background:#10151d;
 
-border-bottom:1px solid #ddd;
+border-bottom:1px solid #222;
 
 }
 
 
 
-
 .logo{
 
-font-size:25px;
+font-size:26px;
 
 font-weight:900;
 
@@ -62,17 +59,17 @@ display:flex;
 
 align-items:center;
 
+gap:25px;
+
 }
 
 
 
 nav a{
 
+color:#bbb;
+
 text-decoration:none;
-
-color:#555;
-
-margin-left:25px;
 
 font-weight:bold;
 
@@ -80,19 +77,28 @@ font-weight:bold;
 
 
 
+nav a:hover{
+
+color:white;
+
+}
+
+
+
 #theme{
-
-margin-left:20px;
-
-font-size:22px;
 
 background:none;
 
 border:0;
 
+color:white;
+
+font-size:22px;
+
 cursor:pointer;
 
 }
+
 
 
 
@@ -109,9 +115,9 @@ padding:50px 20px;
 
 .hero h1{
 
-font-size:40px;
+font-size:42px;
 
-margin-bottom:10px;
+margin:0 0 15px;
 
 }
 
@@ -119,24 +125,29 @@ margin-bottom:10px;
 
 .hero p{
 
-color:#666;
+color:#aaa;
 
 }
 
 
 
-
 #search{
+
+margin-top:20px;
 
 width:420px;
 
 max-width:90%;
 
-padding:15px 20px;
+padding:15px;
 
 border-radius:12px;
 
-border:1px solid #ccc;
+border:1px solid #333;
+
+background:#111820;
+
+color:white;
 
 font-size:16px;
 
@@ -159,13 +170,14 @@ padding:20px;
 
 
 
+
 #grid{
 
 display:grid;
 
 grid-template-columns:
 
-repeat(auto-fit,minmax(350px,1fr));
+repeat(auto-fit,minmax(360px,1fr));
 
 gap:25px;
 
@@ -177,22 +189,19 @@ gap:25px;
 
 .card{
 
+background:#121820;
 
-display:flex;
-
-gap:20px;
-
-background:white;
+border:1px solid #202833;
 
 border-radius:18px;
 
 padding:22px;
 
-box-shadow:
+display:flex;
 
-0 10px 30px rgba(0,0,0,.08);
+gap:20px;
 
-transition:.25s;
+transition:.2s;
 
 }
 
@@ -202,6 +211,8 @@ transition:.25s;
 
 transform:translateY(-5px);
 
+border-color:#2563eb;
+
 }
 
 
@@ -210,12 +221,11 @@ transform:translateY(-5px);
 
 .icon img{
 
+width:95px;
 
-width:100px;
+height:95px;
 
-height:100px;
-
-border-radius:20px;
+border-radius:18px;
 
 object-fit:cover;
 
@@ -233,53 +243,49 @@ flex:1;
 
 
 
-
-
-.title{
+.top{
 
 display:flex;
 
 align-items:center;
 
-gap:10px;
+gap:12px;
 
 }
 
 
 
-.title h2{
+.top h2{
 
 margin:0;
 
-font-size:22px;
+font-size:23px;
 
 }
 
 
 
 
-.title span{
 
+.badge{
 
-background:#111;
-
-color:white;
-
-font-size:12px;
+background:#2563eb;
 
 padding:5px 12px;
 
 border-radius:20px;
 
+font-size:12px;
 
 }
+
 
 
 
 
 .description{
 
-color:#666;
+color:#aaa;
 
 line-height:1.5;
 
@@ -289,9 +295,9 @@ line-height:1.5;
 
 
 
-.info{
+.details{
 
-background:#f5f5f5;
+background:#0d1117;
 
 padding:12px;
 
@@ -303,13 +309,21 @@ font-size:14px;
 
 
 
-.info p{
+.details div{
 
 display:flex;
 
 justify-content:space-between;
 
-margin:6px 0;
+padding:4px 0;
+
+}
+
+
+
+.details span{
+
+color:#bbb;
 
 }
 
@@ -323,15 +337,15 @@ display:block;
 
 margin-top:15px;
 
-text-align:center;
-
-background:#111;
+background:#2563eb;
 
 color:white;
 
 padding:12px;
 
 border-radius:12px;
+
+text-align:center;
 
 text-decoration:none;
 
@@ -341,124 +355,85 @@ font-weight:bold;
 
 
 
-
 .download:hover{
 
-background:#333;
-
-}
-
-
-
-
-
-
-/* DARK MODE */
-
-
-body.dark{
-
-background:#080b10;
-
-color:#eee;
-
-}
-
-
-
-body.dark header{
-
-background:#10141a;
-
-border-color:#222;
-
-}
-
-
-
-body.dark nav a{
-
-color:#ddd;
-
-}
-
-
-
-body.dark .hero p{
-
-color:#aaa;
-
-}
-
-
-
-
-body.dark #search{
-
-background:#151a22;
-
-color:white;
-
-border-color:#333;
-
-}
-
-
-
-
-
-body.dark .card{
-
-background:#121820;
-
-color:white;
-
-box-shadow:
-
-0 10px 30px rgba(0,0,0,.5);
-
-}
-
-
-
-
-body.dark .description{
-
-color:#aaa;
-
-}
-
-
-
-
-
-body.dark .info{
-
-background:#1b222c;
-
-}
-
-
-
-
-body.dark .title span{
-
-background:#2563eb;
-
-}
-
-
-
-body.dark .download{
-
-background:#2563eb;
-
-}
-
-
-
-body.dark .download:hover{
-
 background:#1d4ed8;
+
+}
+
+
+
+
+
+/* LIGHT MODE */
+
+
+body:not(.dark){
+
+background:#f3f4f6;
+
+color:#111;
+
+}
+
+
+
+body:not(.dark) header{
+
+background:white;
+
+border-color:#ddd;
+
+}
+
+
+
+body:not(.dark) nav a{
+
+color:#555;
+
+}
+
+
+
+body:not(.dark) #theme{
+
+color:#111;
+
+}
+
+
+
+body:not(.dark) #search{
+
+background:white;
+
+color:black;
+
+}
+
+
+
+body:not(.dark) .card{
+
+background:white;
+
+border-color:#ddd;
+
+}
+
+
+
+body:not(.dark) .details{
+
+background:#f3f3f3;
+
+}
+
+
+
+body:not(.dark) .description{
+
+color:#555;
 
 }

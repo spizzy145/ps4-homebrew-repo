@@ -1,6 +1,17 @@
 {
   "apps": [
     {
+      "name": "Azif",
+      "category": "Utility",
+      "version": "1.02",
+      "content_id": "AZIF00001",
+      "title_id": "AZIF00001",
+      "size": "6.31 MB",
+      "description": "PS4 homebrew utility application.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_AZIF00001_v1.02.pkg"
+    },
+    {
       "name": "Itemzflow",
       "category": "Manager",
       "version": "1.08",
@@ -10,6 +21,116 @@
       "description": "A PS4 homebrew file manager and application manager.",
       "icon": "icons/itemzflow.png",
       "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_ITEM00001_v1.08.pkg"
+    },
+    {
+      "name": "KRGR",
+      "category": "Game",
+      "version": "1.00",
+      "content_id": "KRGR00001",
+      "title_id": "KRGR00001",
+      "size": "225 MB",
+      "description": "PS4 homebrew application.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_KRGR00001_v1.00.pkg"
+    },
+    {
+      "name": "Lapy Apps",
+      "category": "Utility",
+      "version": "1.02",
+      "content_id": "LAPY20015",
+      "title_id": "LAPY20015",
+      "size": "52.3 MB",
+      "description": "Homebrew utility collection.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_LAPY20015_v1.02.pkg"
+    },
+    {
+      "name": "Mando",
+      "category": "Utility",
+      "version": "1.00",
+      "content_id": "MAND00001",
+      "title_id": "MAND00001",
+      "size": "6.81 MB",
+      "description": "PS4 homebrew utility.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_MAND00001_v1.00.pkg"
+    },
+    {
+      "name": "NetCheat",
+      "category": "Utility",
+      "version": "0.37",
+      "content_id": "NTXS10053",
+      "title_id": "NTXS10053",
+      "size": "12.6 MB",
+      "description": "PS4 homebrew tool.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_NTXS10053_v0.37.pkg"
+    },
+    {
+      "name": "PKGi",
+      "category": "Store",
+      "version": "1.10.0",
+      "content_id": "PKGI13337",
+      "title_id": "PKGI13337",
+      "size": "81.5 MB",
+      "description": "PS4 homebrew package manager.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_PKGI13337_v1.10.0.pkg"
+    },
+    {
+      "name": "SFIN",
+      "category": "Utility",
+      "version": "0.9.4",
+      "content_id": "SFIN00000",
+      "title_id": "SFIN00000",
+      "size": "55.8 MB",
+      "description": "PS4 homebrew application.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_SFIN00000_v0.9.4.pkg"
+    },
+    {
+      "name": "Skid",
+      "category": "Utility",
+      "version": "1.01",
+      "content_id": "SKID02048",
+      "title_id": "SKID02048",
+      "size": "36.5 MB",
+      "description": "PS4 homebrew tool.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_SKID02048_v1.01.pkg"
+    },
+    {
+      "name": "UDAT",
+      "category": "Save",
+      "version": "2.04",
+      "content_id": "UDAT99998",
+      "title_id": "UDAT99998",
+      "size": "8.38 MB",
+      "description": "PS4 save related utility.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_UDAT99998_v2.04.pkg"
+    },
+    {
+      "name": "Wili",
+      "category": "Utility",
+      "version": "1.6.0",
+      "content_id": "WILI00000",
+      "title_id": "WILI00000",
+      "size": "71.3 MB",
+      "description": "PS4 homebrew application.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_WILI00000_v1.6.0.pkg"
+    },
+    {
+      "name": "YTSB",
+      "category": "Media",
+      "version": "1.0.1",
+      "content_id": "YTSB42069",
+      "title_id": "YTSB42069",
+      "size": "6.31 MB",
+      "description": "PS4 homebrew media application.",
+      "icon": "icons/default.png",
+      "pkg": "https://github.com/spizzy145/ps4-homebrew-repo/releases/download/v1.0/PS4_YTSB42069_v1.0.1.pkg"
     }
   ]
 }

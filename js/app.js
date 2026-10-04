@@ -1,43 +1,51 @@
-const grid=document.getElementById("grid");
+const grid = document.getElementById("grid");
 
 
 fetch("repo.json")
 
-.then(r=>r.json())
+.then(response => response.json())
 
-.then(data=>{
-
-
-data.apps.forEach(app=>{
+.then(data => {
 
 
-let card=document.createElement("article");
+data.apps.forEach(app => {
+
+
+let card=document.createElement("div");
 
 card.className="card";
 
 
-card.innerHTML=`
+card.innerHTML = `
 
-<img src="${app.icon || 'icons/default.png'}">
+
+<img src="${app.icon}" 
+onerror="this.src='icons/default.png'">
 
 
 <h2>${app.name}</h2>
 
 
-<span class="badge">
+<div class="category">
 ${app.category}
-</span>
-
-<span class="badge">
-v${app.version}
-</span>
+</div>
 
 
-<p class="info">
+<div class="version">
+Version ${app.version}
+</div>
+
+
+
+<p class="description">
 
 ${app.description}
 
-<br><br>
+</p>
+
+
+
+<div class="info">
 
 <b>Title ID:</b> ${app.title_id}
 
@@ -49,12 +57,18 @@ ${app.description}
 
 <b>Size:</b> ${app.size}
 
-</p>
+</div>
 
 
-<a class="download" href="${app.pkg}">
+
+<a class="download" 
+href="${app.pkg}" 
+target="_blank">
+
 Download PKG
+
 </a>
+
 
 `;
 
@@ -69,27 +83,21 @@ grid.appendChild(card);
 
 
 
-document.getElementById("theme").onclick=()=>{
-
-document.body.classList.toggle("light");
-
-};
+document.getElementById("search").oninput=function(){
 
 
-
-document.getElementById("search").oninput=e=>{
-
-
-document.querySelectorAll(".card").forEach(card=>{
+let value=this.value.toLowerCase();
 
 
-card.style.display=
+document.querySelectorAll(".card")
+.forEach(card=>{
 
-card.innerText
-.toLowerCase()
-.includes(e.target.value.toLowerCase())
 
-?"block":"none";
+card.style.display =
+card.innerText.toLowerCase()
+.includes(value)
+?"block"
+:"none";
 
 
 });

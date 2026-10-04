@@ -13,7 +13,7 @@ fetch("repo.json")
 
 apps = data.apps;
 
-render(apps);
+renderApps(apps);
 
 });
 
@@ -21,7 +21,7 @@ render(apps);
 
 
 
-function render(list){
+function renderApps(list){
 
 
 grid.innerHTML="";
@@ -31,7 +31,7 @@ grid.innerHTML="";
 list.forEach(app=>{
 
 
-const card=document.createElement("div");
+let card=document.createElement("article");
 
 card.className="card";
 
@@ -41,7 +41,8 @@ card.innerHTML=`
 
 <div class="icon">
 
-<img src="${app.icon}"
+<img loading="lazy"
+src="${app.icon}"
 onerror="this.src='icons/default.png'">
 
 </div>
@@ -51,11 +52,15 @@ onerror="this.src='icons/default.png'">
 <div class="content">
 
 
-<div class="title">
+<div class="top">
+
 
 <h2>${app.name}</h2>
 
-<span>${app.category}</span>
+<span class="badge">
+${app.category}
+</span>
+
 
 </div>
 
@@ -69,49 +74,49 @@ ${app.description}
 
 
 
-<div class="info">
+<div class="details">
 
 
-<p>
+<div>
 <b>Version</b>
-${app.version}
-</p>
+<span>${app.version}</span>
+</div>
 
 
-<p>
+<div>
 <b>Developer</b>
-${app.developer}
-</p>
+<span>${app.developer}</span>
+</div>
 
 
-<p>
-<b>Firmware</b>
-${app.firmware}
-</p>
+<div>
+<b>FW Support</b>
+<span>${app.firmware}</span>
+</div>
 
 
-<p>
+<div>
 <b>Title ID</b>
-${app.title_id}
-</p>
+<span>${app.title_id}</span>
+</div>
 
 
-<p>
+<div>
 <b>Content ID</b>
-${app.content_id}
-</p>
+<span>${app.content_id}</span>
+</div>
 
 
-<p>
+<div>
 <b>Size</b>
-${app.size}
-</p>
+<span>${app.size}</span>
+</div>
 
 
-<p>
+<div>
 <b>Updated</b>
-${app.updated}
-</p>
+<span>${app.updated}</span>
+</div>
 
 
 </div>
@@ -132,7 +137,6 @@ Download PKG
 `;
 
 
-
 grid.appendChild(card);
 
 
@@ -144,49 +148,60 @@ grid.appendChild(card);
 
 
 
-search.oninput=()=>{
+
+search.addEventListener("input",()=>{
 
 
-let text=search.value.toLowerCase();
+let value =
+search.value.toLowerCase();
 
 
 
-render(
-
-apps.filter(app=>
+let result =
+apps.filter(app =>
 
 app.name.toLowerCase()
-.includes(text)
+.includes(value)
 
-)
+||
+app.category.toLowerCase()
+.includes(value)
 
 );
 
 
-};
+
+renderApps(result);
+
+
+});
 
 
 
 
 
-// Dark mode
 
 
-const button=document.getElementById("theme");
+// DARK MODE DEFAULT
+
+
+const theme =
+document.getElementById("theme");
 
 
 
-if(localStorage.getItem("theme")=="dark"){
+if(localStorage.getItem("theme") !== "light"){
 
 document.body.classList.add("dark");
 
-button.textContent="☀";
+theme.textContent="☀";
 
 }
 
 
 
-button.onclick=()=>{
+
+theme.onclick=()=>{
 
 
 document.body.classList.toggle("dark");
@@ -196,9 +211,13 @@ document.body.classList.toggle("dark");
 if(document.body.classList.contains("dark")){
 
 
-localStorage.setItem("theme","dark");
+localStorage.setItem(
+"theme",
+"dark"
+);
 
-button.textContent="☀";
+
+theme.textContent="☀";
 
 
 }
@@ -206,9 +225,13 @@ button.textContent="☀";
 else{
 
 
-localStorage.setItem("theme","light");
+localStorage.setItem(
+"theme",
+"light"
+);
 
-button.textContent="☾";
+
+theme.textContent="☾";
 
 
 }
